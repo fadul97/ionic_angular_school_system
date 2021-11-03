@@ -1,3 +1,4 @@
+import { AuthService } from './../../../services/auth.service';
 import { CredentialsDTO } from './../../../models/credentials.dto';
 import { Component, OnInit } from '@angular/core';
 import { MenuController, NavController } from '@ionic/angular';
@@ -13,7 +14,10 @@ export class HomePagePage implements OnInit {
     password: ''
   };
 
-  constructor(public navCtrl: NavController, public menu: MenuController) { }
+  constructor(
+    public navCtrl: NavController,
+    public menu: MenuController,
+    public auth: AuthService) { }
 
   ngOnInit() {
   }
@@ -27,10 +31,12 @@ export class HomePagePage implements OnInit {
   }
 
   signIn(){
-    console.log(this.creds);
-    if(this.isLoginValid()){
-      this.navCtrl.navigateRoot('student');
-    }
+    this.auth.authenticate(this.creds)
+      .subscribe(response => {
+        console.log(response.headers.get('Authorization'));
+        this.navCtrl.navigateRoot('student');
+      },
+      error => {});
   }
 
   isLoginValid(){

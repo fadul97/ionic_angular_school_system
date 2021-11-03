@@ -1,3 +1,4 @@
+import { AuthService } from './../services/auth.service';
 import { errorInterceptorProvider } from './interceptors/error-interceptor';
 import { ProfessorService } from './../services/domain/professor.service';
 import { NgModule } from '@angular/core';
@@ -14,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ProfessorService, errorInterceptorProvider],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ProfessorService, errorInterceptorProvider, AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
