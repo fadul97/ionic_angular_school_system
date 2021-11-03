@@ -1,0 +1,28 @@
+img{
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#signin{
+  margin-top: 20px;
+  background-color: #ce5424;
+  border-radius: 4px;
+}
+
+#signup{
+  margin-top: 10px;
+  background-color: #f8f7f7;
+  color: #ce5424;
+  border-radius: 4px;
+}
+
+.form{
+  ion-item{
+    margin-top: 5px;
+    border-radius: 5px;
+    border-color: #1d1c1c;
+    border-width: 2px;
+    border-style: solid;
+  }
+}
