@@ -1,6 +1,5 @@
 import { ProfessorService } from './../../../services/domain/professor.service';
 import { Component, OnInit } from '@angular/core';
-import { StudentService } from 'src/services/domain/student.service';
 
 @Component({
   selector: 'app-student',
@@ -9,7 +8,7 @@ import { StudentService } from 'src/services/domain/student.service';
 })
 export class StudentPage implements OnInit {
 
-  constructor(public studentService: StudentService, public professorService: ProfessorService) { }
+  constructor(public professorService: ProfessorService) { }
 
   ngOnInit() {
     this.professorService.findAllStudents()
