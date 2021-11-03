@@ -33,4 +33,8 @@ export class HomePagePage implements OnInit {
   isLoginValid(){
     return true;
   }
+
+  signUp(){
+    this.navCtrl.navigateRoot('subject');
+  }
 }
