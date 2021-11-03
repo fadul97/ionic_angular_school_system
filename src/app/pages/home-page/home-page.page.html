@@ -6,14 +6,14 @@
 
   <div class="form">
     <ion-item lines="none">
-      <ion-input placeholder="email@email.com"></ion-input>
+      <ion-input placeholder="email@email.com" [(ngModel)]="username"></ion-input>
     </ion-item>
 
     <ion-item lines="none">
-      <ion-input placeholder="password" type="password"></ion-input>
+      <ion-input placeholder="password" type="password" [(ngModel)]="password"></ion-input>
     </ion-item>
 
-    <ion-button id="signin" color="orange" expand="block">Sign in</ion-button>
+    <ion-button id="signin" color="orange" expand="block" (click)="signIn()">Sign in</ion-button>
     <ion-button id="signup" color="white" expand="block">Sign up</ion-button>
   </div>
 
