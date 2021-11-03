@@ -5,5 +5,11 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-list style="display: grid;">
+    <button ion-item *ngFor="let item of items">
+      <h2 class="ion-text-start"> {{ item.name }} </h2>
+      <p class="item-text-wrap"> Students: {{ item.size }} </p>
+      <hr>
+    </button>
+  </ion-list>
 </ion-content>

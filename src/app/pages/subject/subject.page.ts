@@ -1,3 +1,4 @@
+import { SubjectOnlyDTO } from 'src/models/subject.only.dto';
 import { SubjectService } from './../../../services/domain/subject.service';
 import { Component, OnInit } from '@angular/core';
 import { ProfessorService } from 'src/services/domain/professor.service';
@@ -9,12 +10,14 @@ import { ProfessorService } from 'src/services/domain/professor.service';
 })
 export class SubjectPage implements OnInit {
 
+  items: SubjectOnlyDTO[];
+
   constructor(public subjectService: SubjectService, public professorService: ProfessorService) { }
 
   ngOnInit() {
     this.professorService.findAllSubjects()
       .subscribe(response => {
-        console.log(response);
+        this.items = response;
       },
       error => {
         console.log(error);
