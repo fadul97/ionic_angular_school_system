@@ -1,3 +1,4 @@
+import { CredentialsDTO } from './../../../models/credentials.dto';
 import { Component, OnInit } from '@angular/core';
 import { MenuController, NavController } from '@ionic/angular';
 
@@ -7,8 +8,10 @@ import { MenuController, NavController } from '@ionic/angular';
   styleUrls: ['./home-page.page.scss'],
 })
 export class HomePagePage implements OnInit {
-  username: string;
-  password: string;
+  creds: CredentialsDTO = {
+    email: '',
+    password: ''
+  };
 
   constructor(public navCtrl: NavController, public menu: MenuController) { }
 
@@ -24,7 +27,7 @@ export class HomePagePage implements OnInit {
   }
 
   signIn(){
-    console.log('Username: ' + this.username, 'Password: ' + this.password);
+    console.log(this.creds);
     if(this.isLoginValid()){
       this.navCtrl.navigateRoot('student');
     }
@@ -35,6 +38,7 @@ export class HomePagePage implements OnInit {
   }
 
   signUp(){
+    console.log(this.creds);
     this.navCtrl.navigateRoot('subject');
   }
 }
